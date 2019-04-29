@@ -1,0 +1,11 @@
+# Top dir ignores
+/img
+/vids
+/lecture-slides
+/*.pdf
+/*.md
+
+# Subfiles
+lib/
+token.mat
+octave-workspace
