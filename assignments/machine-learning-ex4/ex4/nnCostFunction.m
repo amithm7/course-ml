@@ -80,7 +80,7 @@ for i = 1:m
 end
 y = temp;
 
-% Regularization term
+% Regularization term (theta's are are matrices here)
 reg = lambda / (2 * m) * (sum(sum(Theta1(:,2:end) .^ 2)) + sum(sum((Theta2(:,2:end) .^ 2))));
 
 % Cost function
