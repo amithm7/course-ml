@@ -91,15 +91,15 @@ d3 = h - y;
 d2 = (d3 * Theta2) .* [ones(m, 1) sigmoidGradient(z)];
 
 % Accumulate gradients
-D3 = d3' * a;
-D2 = d2(:,2:end)' * X;
+D2 = d3' * a;
+D1 = d2(:,2:end)' * X;
 
 % Regularization for gradient
 reg2 = (lambda/m) * Theta2(:,2:end);
 reg1 = (lambda/m) * Theta1(:,2:end);
 
-Theta2_grad = D3 / m + [zeros(size(Theta2,1), 1) reg2];
-Theta1_grad = D2 / m + [zeros(size(Theta1,1), 1) reg1];
+Theta2_grad = D2 / m + [zeros(size(Theta2,1), 1) reg2];
+Theta1_grad = D1 / m + [zeros(size(Theta1,1), 1) reg1];
 
 
 % -------------------------------------------------------------
